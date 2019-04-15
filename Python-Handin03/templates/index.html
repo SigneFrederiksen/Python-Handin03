@@ -1,0 +1,70 @@
+﻿<!-- Using Jinja2 -->
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Index</title>
+</head>
+<body>
+    <h1>Python Hand in 03 - Cars with CRUD</h1>
+    <br />
+
+    <h2>List of Cars:</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <td>ID Number -- </td>
+                <td>Car Model -- </td>
+                <td>Max Speed</td>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Take one row at a time and put it in the table-->
+            {% for row in carlist %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br />
+    <br />
+
+    <h3>Fastest Car:</h3>
+    <p>ID Number: {{ carspeed[0] }}</p>
+    <p>Car Model: {{ carspeed[1] }}</p>
+    <p>Max Speed: {{ carspeed[2] }}</p>
+    <br />
+    <br />
+
+    <h4>Create, Update or Delete a Car:</h4>
+    <p>(The Car table uses auto increment for the ID)</p>
+    <form method="post" action="/index">
+        <label>ID Number: </label>
+        <input type="text" name="id" value="" />
+        <br />
+        <br />
+
+        <label>Car Model: </label>
+        <input type="text" name="model" value="" />
+        <br />
+        <br />
+
+        <label>Max Speed: </label>
+        <input type="text" name="speed" value="" />
+        <br />
+        <br />
+
+        <input type="submit" name="myaction" value="Create car" />
+        <input type="submit" name="myaction" value="Update car" />
+        <input type="submit" name="myaction" value="Delete car" />
+        <!--<button type="submit" name="Update car">Update</button>
+    <button type="submit" name="Delete car">Delete</button>-->
+    </form>
+
+</body>
+</html>
