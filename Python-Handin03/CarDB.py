@@ -7,7 +7,7 @@ import os
 app = Flask(__name__)
 
 @app.route('/')
-@app.route('/index', methods=['GET', 'POST'])
+@app.route('/index', methods=['POST'])
 
 # Form request; here we will use the functions for CRUD,
 # and display the result on our website/index page.
