@@ -3,14 +3,16 @@ import pyodbc # Installed by pip
 import os
 
 
-## Form request; here we will use the functions for CRUD,
-## and display the result on our website/index page.
+
 app = Flask(__name__)
 
 @app.route('/')
 @app.route('/index', methods=['GET', 'POST'])
 
-def showindexpage() : # Function to show index page.
+# Form request; here we will use the functions for CRUD,
+# and display the result on our website/index page.
+# Function to show index page.
+def showindexpage() :
 
     global conn, cursor
     conn = pyodbc.connect(Trusted_Connection = 'yes', driver = '{SQL Server}', server = 'DESKTOP-VKU3EK5', database = 'CarDB') # Connection to DB.
@@ -40,7 +42,7 @@ def showindexpage() : # Function to show index page.
 #####################
 
 ## Create car function.
-def addcar() : # Addcar function.
+def addcar() :
 
     try :
         # Defines variables that will hold data for a car.
@@ -55,7 +57,7 @@ def addcar() : # Addcar function.
 #####################
 
 ## Update car function.
-def updatecar() : # Updatecar function.
+def updatecar() :
 
     try :
         # Defines variables that will hold data for a car.
@@ -71,7 +73,7 @@ def updatecar() : # Updatecar function.
 #####################
 
 ## Delete car function.
-def deletecar() : # Deletecar function.
+def deletecar() :
 
     try :
         # Defines a variable to store the ID for a specific car.
